@@ -1,0 +1,25 @@
+﻿{
+  "app": {
+    "launch": {
+       "local_path": "index.html"
+    }
+  },
+  "description": "罗塞塔",
+  "icons": {
+    "16": "16.png",
+    "128": "128.png",
+    "256": "256.png"
+  },
+  "minimum_chrome_version": "14",
+  "name" : "罗塞塔",
+  "manifest_version": 2,
+  "version" : "0.3",
+  "permissions": [
+        "tabs",
+        "tts",
+        "webRequest",
+        "webRequestBlocking",
+        "background",
+        "unlimitedStorage"
+    ]   
+}
