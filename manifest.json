@@ -3,18 +3,23 @@
   "manifest_version": 2,
   "version" : "0.3",
   "description" : "罗塞塔",
-
-  
   "browser_action": {
       "default_icon": "icon-rosetta.jpg",
       "default_title": "罗塞塔"
+  },
+  "background": {
+     "scripts": ["lib/jquery-1.7.2.min.js",
+                 "lib/underscore-min.js",
+                 "lib/google-tts.js",        
+                 "douban/voice/bg.js"]
   },
   "content_scripts" : [
     {
       "matches" : [
         "http://www.douban.com/photos/album/*"
       ],
-      "js" : ["lib/jquery-1.7.2.min.js",                                     
+      "js" : ["lib/jquery-1.7.2.min.js", 
+              "lib/google-tts.js",                                    
               "douban/photo.js"],
       "run_at" : "document_end",
       "all_frames" : false
@@ -23,6 +28,7 @@
     "permissions": [
         "tabs",
         "tts",
+        "ttsEngine",
         "webRequest",
         "webRequestBlocking",
         "background",
@@ -30,6 +36,8 @@
         "http://www.douban.com/*",
         "http://www.douban.com/people/*",
         "http://api.douban.com/people/*",
-        "http://img1.douban.com/*"
+        "http://img1.douban.com/*",
+        "http://translate.google.com.hk/*",
+        "http://translate.google.com/*"
     ]   
 }

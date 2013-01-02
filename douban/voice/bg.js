@@ -1,7 +1,5 @@
 (function () {	
-//使用了SINA的这个类的接口
-var getFile=save.savToSina.getFile;
-var setFile=save.savToSina.setFile;
+
 var MAX_WAV_SIZE=381620;
 
 //不能这么快就渲染，得加一个延时的逻辑
@@ -76,6 +74,26 @@ chrome.extension.onMessage.addListener(
     if (request.method == "heartBeat"){
     	sendResponse(1);
 	}
+	if (request.method == "play"){
+		console.log("Hello ....I am playing....");
+		// var googleTts = new window.GoogleTTS();
+		// var txt=request.text||"!hola";
+		// var lang=request.lang||"es";
+
+		// googleTts.play(txt,lang, function(err) {
+  //               if (err) {
+  //                   console.log(err.toString());
+  //               }
+  //       });
+		var txt=request.text||"!esta";
+		var lang=request.lang||"es";
+        var src='http://translate.google.com/translate_tts?ie=UTF-8&tl=' + lang + '&q=' + txt;
+    	var audio = new Audio();
+        audio.src=src;
+        audio.play();
+        console.log(audio);
+	}
+
 
 	return true;     		
 });
