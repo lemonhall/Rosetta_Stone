@@ -14,6 +14,9 @@ var voiceInfo;
 var voiceArray;
 var utteranceIndex = 0;
 
+
+
+
 function load() {
   text = document.getElementById('srctext');
   ttsStatus = document.getElementById('ttsStatus');
